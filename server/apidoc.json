@@ -1,0 +1,13 @@
+{
+	"name": "API Documentation Testing",
+	"version": "1.0.0",
+	"description": "Sample API documentation using apidoc",
+	"title": "API Documentation",
+	"url": "http://localhost:3000",
+	"template": {
+		"withCompare": true,
+		"withGenerator": true,
+		"withLayout": true,
+		"withThemeToggle": true
+	}
+}

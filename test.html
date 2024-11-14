@@ -1,0 +1,499 @@
+<html lang="en">
+
+<head>
+    <title>Whitecliff</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Flag icon -->
+    <link href="/coreui/vendors/css/flag-icon.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://uat.admin88.ps9games.com/css/custom1.css?v=3" rel="stylesheet">
+
+
+    <style>
+        .showline {
+            border: 1.5px solid red;
+        }
+
+        .left-sidebar {
+            background-color: rgb(255, 255, 255) !important;
+            height: 100%;
+            width: 20%;
+            overflow-y: scroll;
+            position: fixed;
+            scrollbar-width: none;
+        }
+
+        .right-content {
+            margin-left: 20%;
+            width: 75%;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+
+
+        .nav-link {
+            color: black;
+        }
+
+        .nav-pills .nav-link:hover {
+            color: rgb(0, 0, 0) !important;
+            background-color: rgb(240, 233, 255) !important;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: rgb(105, 92, 254) !important;
+        }
+
+        .bg-content {
+            background-color: rgb(243, 243, 243) !important;
+        }
+
+        .bg-nav {
+            background-color: rgb(230, 230, 250) !important;
+        }
+
+        .trans-text {
+            color: rgb(102, 0, 0) !important;
+            font-weight: 700 !important;
+        }
+
+        .sop-text p {
+            margin-bottom: 0;
+        }
+
+        .sop-text li a {
+            padding-left: 10px;
+        }
+
+        .red-text {
+            color: red !important;
+            font-weight: 700 !important;
+            font-style: italic;
+        }
+
+        p,
+        li a {
+            font-weight: 700 !important;
+        }
+
+        thead th {
+            background-color: rgb(217, 217, 217) !important;
+        }
+
+        table p {
+            margin: 0;
+        }
+
+        .table-bordered1 th,
+        .table-bordered1 td {
+            border: solid 1px !important;
+        }
+
+        .code-bg-color {
+            background-color: rgb(102, 0, 0) !important;
+            font-weight: 550 !important;
+            color: white;
+            font-feature-settings: 'zero' 1;
+        }
+
+        .code-body {
+            padding-left: 20px;
+        }
+
+        .code-body2 {
+            padding-left: 40px;
+        }
+
+        .code-body3 {
+            padding-left: 60px;
+        }
+
+        .code-body4 {
+            padding-left: 30px;
+        }
+
+        #main-table th {
+            border: thin solid white;
+            color: white;
+            background-color: rgb(33, 33, 132) !important;
+        }
+
+        .table-responsive {
+            max-height: 65vh;
+        }
+
+        .table-responsive .sticky-cell {
+            min-width: 100px !important;
+        }
+
+        #navBottom {
+            display: none;
+        }
+
+        .code-textarea {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 15px;
+            padding-top: 0px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            resize: none;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tempTextArea {
+            position: absolute;
+            left: -99999px;
+        }
+
+        /*When screen is 1095px and above*/
+        @media (min-width: 1095px) {
+            .drop-type {
+                padding-left: 50px;
+            }
+        }
+
+        /*When screen is 1000px and below*/
+        @media (max-width: 1000px) {
+
+            a,
+            p,
+            li,
+            h4,
+            h5,
+            table,
+            button,
+            textarea {
+                font-size: 12px !important;
+            }
+
+            p,
+            .flex-row {
+                text-wrap: pretty !important;
+            }
+
+            .drop-lang {
+                padding: 0;
+            }
+
+            .drop-type {
+                padding: 0;
+            }
+
+            .right-content {
+                margin: 0;
+            }
+
+            .left-sidebar {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+
+            .nav-pills a {
+                font-size: 5px !important;
+                text-wrap: pretty !important;
+            }
+        }
+
+        /*When screen is 650px and below*/
+        @media (max-width: 650px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            a,
+            p,
+            li,
+            h4,
+            h5,
+            table,
+            button,
+            textarea {
+                font-size: 9px !important;
+            }
+
+            .dropdown a,
+            button {
+                font-size: 10px !important;
+            }
+        }
+
+        /*When screen is 580px and below*/
+        @media (max-width: 580px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            a,
+            p,
+            li,
+            h4,
+            h5,
+            table,
+            button,
+            textarea {
+                font-size: 10px !important;
+            }
+
+            .right-content {
+                width: auto;
+            }
+        }
+
+        /*When screen is 460px and below*/
+        @media (max-width: 460px) {
+
+            a,
+            p,
+            li,
+            h4,
+            h5,
+            table,
+            button,
+            textarea {
+                font-size: 8px !important;
+            }
+
+            .dropdown a,
+            button {
+                font-size: 8px !important;
+            }
+        }
+
+        /*When screen is 420px and below*/
+        @media (max-width: 420px) {
+
+            a,
+            p,
+            li,
+            h4,
+            h5,
+            table,
+            button,
+            textarea {
+                font-size: 8px !important;
+            }
+
+            .dropdown a,
+            button {
+                font-size: 8px !important;
+            }
+
+            .changelog-content p {
+                font-size: 7px !important;
+            }
+
+        }
+
+
+        .trans-text,
+        .trans-text1,
+        .red-text1 {
+            display: none;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-sm-2 p-0 left-sidebar border-end">
+
+                <!-- Sidebar-->
+                <nav id="navbar-toc" class="navbar-expand-sm navbar-light flex-column align-items-stretch p-3">
+                    <div class="mb-4">
+                        <a class="navbar-brand">API MANUAL</a>
+                    </div>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="navbar-brand">Table of Content <span class="trans-text1">Table of Content</span></a>
+                        <a class="nav-link mt-2 active" href="#item-sop">SOP OF WhiteCliff INTEGRATION</a>
+                        <a class="nav-link mt-2" href="#item-1">1. General <span class="trans-text1">General</span></a>
+                        <a class="nav-link mt-2" href="#item-2">2. Authentication <span
+                                class="trans-text1">Authentication</span></a>
+                        <a class="nav-link mt-2" href="#item-3">3. Balance <span class="trans-text1">Balance</span></a>
+                        <a class="nav-link mt-2" href="#item-4">4. Debit <span class="trans-text1">Debit</span></a>
+                        <a class="nav-link mt-2" href="#item-5">5. Credit <span class="trans-text1">Credit</span></a>
+                        <a class="nav-link mt-2" href="#item-6">6. Resettlement (Mandatory for sportbook only) <span
+                                class="trans-text1">Resettlement (Mandatory for sportbook only)</span></a>
+                        <a class="nav-link mt-2" href="#item-7">7. Bonus <span class="trans-text1">Bonus</span></a>
+                        <a class="nav-link mt-2" href="#item-8">8. Bet Results <span class="trans-text1">Bet
+                                Results</span></a>
+                        <a class="nav-link mt-2" href="#item-9">9. Transaction Results <span
+                                class="trans-text1">Transaction Results</span></a>
+                        <a class="nav-link mt-2" href="#item-10">10. Product Game List <span class="trans-text1">Product
+                                Game List</span></a>
+                        <a class="nav-link mt-2" href="#item-11">11. Available Credit <span
+                                class="trans-text1">Available Credit</span></a>
+                        <a class="nav-link mt-2" href="#item-12">12. Pushed Bets <span class="trans-text1">Pushed
+                                Bets</span></a>
+
+                        <!-- Pending -->
+                        <a class="nav-link mt-2" href="#item-appendix">Appendix <span
+                                class="trans-text1">Appendix</span></a>
+                        <a class="nav-link mt-2" href="#item-faq">Frequently Asked Questions <span
+                                class="trans-text1">Frequently Asked Question</span></a>
+                        <a class="nav-link mt-2" href="#item-changelog">Changelog <span
+                                class="trans-text1">Changelog</span></a>
+                    </nav>
+                </nav>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-sm p-0 right-content">
+
+                <!-- Top Navbar -->
+                <nav class="navbar navbar-expand-sm bg-nav border-bottom sticky-top">
+                    <div class="container">
+                        <div class="row" style="width: inherit;">
+
+                            <!-- Mobile Navbar -->
+                            <div class="col-8 drop-mobile">
+                                <div class="dropdown mobile-nav">
+                                    <button type="button" class="btn dropdown-toggle" id="navbarDropdown"
+                                        data-bs-toggle="dropdown">
+                                        <a>API MENU</a>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#item-sop">
+                                            SOP OF WhiteCliff INTEGRATION
+                                        </a>
+                                        <a class="dropdown-item" href="#item-1">
+                                            1. General
+                                        </a>
+                                        <a class="dropdown-item" href="#item-2">
+                                            2. Authentication
+                                        </a>
+                                        <a class="dropdown-item" href="#item-3">
+                                            3. Balance
+                                        </a>
+                                        <a class="dropdown-item" href="#item-4">
+                                            4. Debit
+                                        </a>
+                                        <a class="dropdown-item" href="#item-5">
+                                            5. Credit
+                                        </a>
+                                        <a class="dropdown-item" href="#item-6">
+                                            6. Resettlement (Mandatory for sportbook only)
+                                        </a>
+                                        <a class="dropdown-item" href="#item-7">
+                                            7. Bonus
+                                        </a>
+                                        <a class="dropdown-item" href="#item-8">
+                                            8. Bet Results
+                                        </a>
+                                        <a class="dropdown-item" href="#item-9">
+                                            9. Transaction Results
+                                        </a>
+                                        <a class="dropdown-item" href="#item-10">
+                                            10. Product Game List
+                                        </a>
+                                        <a class="dropdown-item" href="#item-11">
+                                            11. Available Credit
+                                        </a>
+                                        <a class="dropdown-item" href="#item-12">
+                                            12. Pushed Bets
+                                        </a>
+                                        <a class="dropdown-item" href="#item-appendix">
+                                            Appendix
+                                        </a>
+                                        <a class="dropdown-item" href="#item-faq">
+                                            Frequently Asked Question
+                                        </a>
+                                        <a class="dropdown-item" href="#item-changelog">
+                                            Changelog
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Dropdown box for type and lang-->
+                            <!-- Type dropdown box-->
+                            <div class="col-2 drop-type">
+                                <div class="dropdown">
+                                    <button type="button" class="btn dropdown-toggle" id="navbarDropdown"
+                                        data-bs-toggle="dropdown">
+                                        <a id="manual_type_text">Seamless</a>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#" >
+                                            Seamless
+                                        </a>
+                                        <a class="dropdown-item" href="#" >
+                                            Transfer
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Language dropdown box-->
+                            <div class="col-2 drop-lang">
+                                <div class="dropdown">
+                                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                                        <i class="flag-icon flag-icon-gb"></i>
+                                        English
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="#" >
+                                            English
+                                        </a>
+                                        <a class="dropdown-item" href="#" >
+                                            한국어
+                                        </a>
+                                        <a class="dropdown-item" href="#" >
+                                            简体中文
+                                        </a>
+
+                                        <form id="form-locale" action="#"
+                                            method="POST" style="display: none;">
+                                            <input type="hidden" name="_token"> <input type="hidden"
+                                                id="lang" name="lang" value="en">
+                                            <input type="hidden" id="manual_type" name="manual_type" value="seamless">
+                                        </form>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Content -->
+               
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/main.bundle.js?v=1730712668619"></script>
+
+</body>
+
+</html>
+
+</html>

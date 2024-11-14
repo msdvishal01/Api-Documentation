@@ -1,0 +1,17 @@
+{
+	"name": "apidoc-project",
+	"version": "1.0.0",
+	"description": "Node.js project with apidoc documentation",
+	"main": "src/app.js",
+	"scripts": {
+		"start": "node src/app.js",
+		"apidoc": "apidoc -i src/ -o doc/"
+	},
+	"dependencies": {
+		"apidoc": "^1.2.0",
+		"body-parser": "^1.20.3",
+		"cors": "^2.8.5",
+		"express": "^4.21.1",
+		"mongoose": "^8.7.3"
+	}
+}
